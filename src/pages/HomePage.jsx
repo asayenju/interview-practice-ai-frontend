@@ -6,8 +6,8 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    console.log('Button clicked'); // Verify click works
-    navigate('/chat'); // Try with explicit string path
+    console.log('Button clicked');
+    navigate('/chat');
   };
 
   return (
@@ -59,54 +59,82 @@ const HomePage = () => {
       >
         <Grid container justifyContent="center" sx={{ width: '100%', margin: 0 }}>
           <Grid item xs={12} md={10} lg={8}>
-            <Typography variant="h3" gutterBottom>
+            {/* Hero Section */}
+            <Typography variant="h3" gutterBottom sx={{ fontWeight: 'bold', mb: 2 }}>
               Practice Interviews. Powered by AI.
             </Typography>
-            <Typography variant="h6" color="text.secondary" paragraph>
-              Get instant feedback from an AI Interviewer. Hone your responses, improve your confidence.
+            <Typography variant="h6" color="text.secondary" paragraph sx={{ mb: 4 }}>
+              Get instant feedback from an AI Interviewer. Hone your responses and improve your confidence 
+              with our cutting-edge interview simulation platform.
             </Typography>
 
-            <Grid container spacing={4} sx={{ mt: 2 }}>
+            {/* Features Section */}
+            <Grid container spacing={4} sx={{ mt: 2, mb: 6 }}>
               <Grid item xs={12} md={6}>
-                <Typography variant="h5">🎙️ Real-Time Speech Analysis</Typography>
-                <Typography>
-                  Upload or record answers, get instant transcript + feedback.
+                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
+                  🎙️ Real-Time Speech Analysis
+                </Typography>
+                <Typography variant="body1">
+                  Our advanced speech recognition technology provides instant transcription and analysis 
+                  of your responses, helping you identify areas for improvement.
                 </Typography>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Typography variant="h5">🧠 AI-Powered Insights</Typography>
-                <Typography>
-                  Get detailed suggestions based on delivery, tone, and structure.
+                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
+                  🧠 AI-Powered Insights
+                </Typography>
+                <Typography variant="body1">
+                  Receive detailed feedback on your delivery, tone, and content structure, 
+                  tailored to your specific industry and role.
                 </Typography>
               </Grid>
             </Grid>
 
-            <Grid item xs={12}>
-              <Typography variant="h4" align="center" gutterBottom>
-                How It Works
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Typography variant="h6" gutterBottom>1. Ask what do u want to interview on</Typography>
-              <Typography variant="body1">It could be any interview whether its for software engineering, consulting or many other jobs</Typography>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Typography variant="h6" gutterBottom>2. Answer Interview Questions</Typography>
-              <Typography variant="body1">Speak  your answers in real-time with voice input.</Typography>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Typography variant="h6" gutterBottom>3. Get Instant Feedback</Typography>
-              <Typography variant="body1">Receive actionable suggestions on tone, structure, and clarity.</Typography>
+            {/* How It Works Section */}
+            <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 4 }}>
+              How It Works
+            </Typography>
+            
+            <Grid container spacing={4} sx={{ mb: 6 }}>
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                  1. Select Your Interview Type
+                </Typography>
+                <Typography variant="body1">
+                  Choose from various interview formats including technical, behavioral, 
+                  case studies, or customize your own scenario.
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                  2. Answer Interview Questions
+                </Typography>
+                <Typography variant="body1">
+                  Respond to realistic interview questions either by speaking or typing 
+                  your answers, simulating a real interview environment.
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                  3. Get Comprehensive Feedback
+                </Typography>
+                <Typography variant="body1">
+                  Receive immediate, actionable feedback on your responses, including 
+                  content quality, communication skills, and areas for improvement.
+                </Typography>
+              </Grid>
             </Grid>
 
-
+            {/* CTA Section */}
             <Grid container justifyContent="center" sx={{ mt: 4 }}>
               <Button
                 variant="contained"
-                color="primary"
+                size="large"
                 sx={{
                   backgroundColor: '#000000',
                   color: '#FFFFFF',
+                  padding: '12px 24px',
+                  fontSize: '1.1rem',
                   '&:hover': {
                     backgroundColor: '#FFFFFF',
                     color: '#000000',
@@ -130,6 +158,7 @@ const HomePage = () => {
           padding: '2rem 1rem',
           marginTop: 'auto',
           width: '100%',
+          borderTop: '1px solid #e0e0e0',
         }}
       >
         <Typography variant="body2" color="text.secondary">
