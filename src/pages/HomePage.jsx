@@ -80,7 +80,7 @@ const HomePage = () => {
                 </Typography>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 5 }}>
                   🧠 AI-Powered Insights
                 </Typography>
                 <Typography variant="body1">
@@ -91,7 +91,7 @@ const HomePage = () => {
             </Grid>
 
             {/* How It Works Section */}
-            <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 4 }}>
+            <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 5}}>
               How It Works
             </Typography>
             
