@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://interview-practice-ai-backend.onrender.com/api';
 
 export const sendPrompt = async (prompt) => {
     try {
