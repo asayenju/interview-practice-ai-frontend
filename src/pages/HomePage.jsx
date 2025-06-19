@@ -81,17 +81,6 @@ const HomePage = () => {
               </Grid>
             </Grid>
 
-            <Grid container justifyContent="center" sx={{ mt: 6 }}>
-              <iframe
-                width="720"
-                height="405"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Demo Video"
-                frameBorder="0"
-                allowFullScreen
-                style={{ maxWidth: '100%' }}
-              />
-            </Grid>
             <Grid container justifyContent="center" sx={{ mt: 4 }}>
               <Button
                 variant="contained"
