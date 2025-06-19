@@ -109,51 +109,120 @@ const HomePage = () => {
 
       {/* How It Works Section */}
       <Box sx={{ backgroundColor: '#F8F8F8', py: 8 }}>
-        <Container maxWidth="lg">
-          <Typography variant="h4" align="center" sx={{ fontWeight: 'bold', mb: 6 }}>
-            How It Works
-          </Typography>
-          <Grid container spacing={4}>
-            {[
-              {
-                title: "1. Ask what you want to interview on",
-                description: "You can tell us to ask any question you want"
-              },
-              {
-                title: "2. Practice Your Responses",
-                description: "Answer questions using voice, simulating real interview conditions."
-              },
-              {
-                title: "3. Receive AI Feedback",
-                description: "Get comprehensive analysis on your performance with actionable insights."
-              }
-            ].map((step, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Box sx={{ textAlign: 'center', p: 3 }}>
-                  <Box sx={{
-                    backgroundColor: '#000000',
-                    color: '#FFFFFF',
-                    width: 50,
-                    height: 50,
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    mx: 'auto',
-                    mb: 2,
-                    fontWeight: 'bold'
-                  }}>
-                    {index + 1}
-                  </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>{step.title}</Typography>
-                  <Typography>{step.description}</Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+  <Container maxWidth="lg">
+    <Typography variant="h4" align="center" sx={{ fontWeight: 'bold', mb: 6 }}>
+      How It Works
+    </Typography>
+    
+    {/* Triangle Layout Container */}
+    <Box sx={{ 
+      position: 'relative',
+      height: 400,  // Adjust based on your needs
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center'
+    }}>
+      {/* Top Step (1) */}
+      <Box sx={{
+        position: 'absolute',
+        top: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        textAlign: 'center',
+        width: 300,
+        p: 3
+      }}>
+        <Box sx={{
+          backgroundColor: '#000000',
+          color: '#FFFFFF',
+          width: 50,
+          height: 50,
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          mx: 'auto',
+          mb: 2,
+          fontWeight: 'bold'
+        }}>
+          1
+        </Box>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Ask what you want to interview on
+        </Typography>
+        <Typography>
+          You can tell us to ask any question you want
+        </Typography>
       </Box>
 
+      {/* Bottom Left Step (2) */}
+      <Box sx={{
+        position: 'absolute',
+        bottom: 0,
+        left: '25%',
+        transform: 'translateX(-50%)',
+        textAlign: 'center',
+        width: 300,
+        p: 3
+      }}>
+        <Box sx={{
+          backgroundColor: '#000000',
+          color: '#FFFFFF',
+          width: 50,
+          height: 50,
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          mx: 'auto',
+          mb: 2,
+          fontWeight: 'bold'
+        }}>
+          2
+        </Box>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Practice Your Responses
+        </Typography>
+        <Typography>
+          Answer questions using voice, simulating real interview conditions
+        </Typography>
+      </Box>
+
+      {/* Bottom Right Step (3) */}
+      <Box sx={{
+        position: 'absolute',
+        bottom: 0,
+        left: '75%',
+        transform: 'translateX(-50%)',
+        textAlign: 'center',
+        width: 300,
+        p: 3
+      }}>
+        <Box sx={{
+          backgroundColor: '#000000',
+          color: '#FFFFFF',
+          width: 50,
+          height: 50,
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          mx: 'auto',
+          mb: 2,
+          fontWeight: 'bold'
+        }}>
+          3
+        </Box>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+          Receive AI Feedback
+        </Typography>
+        <Typography>
+          Get comprehensive analysis on your performance with actionable insights
+        </Typography>
+      </Box>
+    </Box>
+  </Container>
+</Box>
       {/* CTA Section */}
       <Box sx={{ py: 8 }}>
         <Container maxWidth="md">
