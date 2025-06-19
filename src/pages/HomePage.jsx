@@ -81,7 +81,6 @@ const HomePage = () => {
               </Grid>
             </Grid>
 
-            <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
             <Grid item xs={12}>
               <Typography variant="h4" align="center" gutterBottom>
                 How It Works
@@ -99,7 +98,6 @@ const HomePage = () => {
               <Typography variant="h6" gutterBottom>3. Get Instant Feedback</Typography>
               <Typography variant="body1">Receive actionable suggestions on tone, structure, and clarity.</Typography>
             </Grid>
-          </Grid>
 
 
             <Grid container justifyContent="center" sx={{ mt: 4 }}>
