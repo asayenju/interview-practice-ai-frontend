@@ -69,7 +69,7 @@ const HomePage = () => {
             </Typography>
 
             {/* Features Section */}
-            <Grid container spacing={4} sx={{ mt: 2, mb: 6 }}>
+            <Grid container spacing={4} sx={{ mt: 2, mb: 10}}>
               <Grid item xs={12} md={6}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
                   🎙️ Real-Time Speech Analysis
@@ -80,7 +80,7 @@ const HomePage = () => {
                 </Typography>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 5 }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
                   🧠 AI-Powered Insights
                 </Typography>
                 <Typography variant="body1">
@@ -91,7 +91,7 @@ const HomePage = () => {
             </Grid>
 
             {/* How It Works Section */}
-            <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 5}}>
+            <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 'bold', mb: 4 }}>
               How It Works
             </Typography>
             
