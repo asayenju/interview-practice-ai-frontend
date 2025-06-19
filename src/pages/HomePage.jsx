@@ -1,121 +1,68 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Container, Grid } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Container, Grid, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    console.log('Button clicked');
     navigate('/chat');
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: 0, padding: 0 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       {/* Header */}
       <AppBar
         position="static"
         sx={{
           backgroundColor: '#FFFFFF',
           color: '#000000',
-          fontWeight: 'bold',
-          fontFamily: 'Roboto',
           boxShadow: 'none',
+          py: 1
         }}
       >
-        <Toolbar sx={{ maxWidth: '1200px', margin: '0 auto', width: '100%', px: { xs: 2, sm: 3 } }}>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Interview Practice AI
-          </Typography>
-          <Button
-            sx={{
-              backgroundColor: '#000000',
-              color: '#FFFFFF',
-              border: '1px solid #000000',
-              '&:hover': {
-                backgroundColor: '#FFFFFF',
-                color: '#000000',
-                border: '1px solid #000000',
-              },
-            }}
-            onClick={handleClick}
-          >
-            Get Started
-          </Button>
-        </Toolbar>
+        <Container maxWidth="lg">
+          <Toolbar disableGutters>
+            <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
+              Interview Practice AI
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#000000',
+                color: '#FFFFFF',
+                '&:hover': {
+                  backgroundColor: '#FFFFFF',
+                  color: '#000000',
+                  border: '1px solid #000000',
+                },
+              }}
+              onClick={handleClick}
+            >
+              Get Started
+            </Button>
+          </Toolbar>
+        </Container>
       </AppBar>
 
-      {/* Main Content */}
-      <Container
-        maxWidth={false}
-        sx={{
-          flexGrow: 1,
-          px: { xs: 2, sm: 3, md: 4 },
-          py: 6,
-          width: '100%',
-          margin: 0,
-          backgroundColor: '#F8F8F8',
-        }}
-      >
-        <Grid container justifyContent="center" sx={{ width: '100%', margin: 0 }}>
-          <Grid item xs={12} md={10} lg={8}>
-            <Typography variant="h3" gutterBottom>
-              Practice Interviews. Powered by AI.
-            </Typography>
-            <Typography variant="h6" color="text.secondary" paragraph>
-              Get instant feedback from an AI Interviewer. Hone your responses, improve your confidence.
-            </Typography>
-
-            <Grid container spacing={4} sx={{ mt: 2 }}>
-              <Grid item xs={12} md={6}>
-                <Typography variant="h5">🎙️ Real-Time Speech Analysis</Typography>
-                <Typography>
-                  Upload or record answers, get instant transcript + feedback.
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <Typography variant="h5">🧠 AI-Powered Insights</Typography>
-                <Typography>
-                  Get detailed suggestions based on delivery, tone, and structure.
-                </Typography>
-              </Grid>
-            </Grid>
-
-            {/* How It Works Section with added top spacing */}
-            <Grid container sx={{ mt: 8 }}> {/* Increased top margin here */}
-              <Grid item xs={12}>
-                <Typography variant="h4" align="center" gutterBottom>
-                  How It Works
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" gutterBottom>1. Select your interview type</Typography>
-                <Typography variant="body1">
-                  Choose from various interview formats including software engineering, 
-                  consulting, or customize your own scenario.
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" gutterBottom>2. Answer interview questions</Typography>
-                <Typography variant="body1">
-                  Speak your answers in real-time with voice input or type your responses.
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Typography variant="h6" gutterBottom>3. Get instant feedback</Typography>
-                <Typography variant="body1">
-                  Receive actionable suggestions on tone, structure, and clarity.
-                </Typography>
-              </Grid>
-            </Grid>
-
-            <Grid container justifyContent="center" sx={{ mt: 6 }}> {/* Adjusted top margin here */}
+      {/* Hero Section */}
+      <Box sx={{ backgroundColor: '#F8F8F8', py: 8 }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
+                Practice Interviews.<br />Powered by AI.
+              </Typography>
+              <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
+                Get instant feedback from an AI Interviewer. Hone your responses and improve your confidence.
+              </Typography>
               <Button
                 variant="contained"
-                color="primary"
+                size="large"
                 sx={{
                   backgroundColor: '#000000',
                   color: '#FFFFFF',
+                  px: 4,
                   '&:hover': {
                     backgroundColor: '#FFFFFF',
                     color: '#000000',
@@ -128,24 +75,122 @@ const HomePage = () => {
               </Button>
             </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Box>
+
+      {/* Features Section */}
+      <Box sx={{ py: 8 }}>
+        <Container maxWidth="lg">
+          <Typography variant="h4" align="center" sx={{ fontWeight: 'bold', mb: 6 }}>
+            Key Features
+          </Typography>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ p: 3, backgroundColor: '#FFFFFF', borderRadius: 2, height: '100%' }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>🎙️ Real-Time Speech Analysis</Typography>
+                <Typography>
+                  Our advanced speech recognition provides instant transcription and analysis of your responses, 
+                  helping you identify areas for improvement in your delivery.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ p: 3, backgroundColor: '#FFFFFF', borderRadius: 2, height: '100%' }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>🧠 AI-Powered Insights</Typography>
+                <Typography>
+                  Receive detailed feedback on your tone, content structure, and communication skills, 
+                  tailored to your specific industry and role.
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* How It Works Section */}
+      <Box sx={{ backgroundColor: '#F8F8F8', py: 8 }}>
+        <Container maxWidth="lg">
+          <Typography variant="h4" align="center" sx={{ fontWeight: 'bold', mb: 6 }}>
+            How It Works
+          </Typography>
+          <Grid container spacing={4}>
+            {[
+              {
+                title: "1. Ask what you want to interview on",
+                description: "You can tell us to ask any question you want"
+              },
+              {
+                title: "2. Practice Your Responses",
+                description: "Answer questions using voice, simulating real interview conditions."
+              },
+              {
+                title: "3. Receive AI Feedback",
+                description: "Get comprehensive analysis on your performance with actionable insights."
+              }
+            ].map((step, index) => (
+              <Grid item xs={12} md={4} key={index}>
+                <Box sx={{ textAlign: 'center', p: 3 }}>
+                  <Box sx={{
+                    backgroundColor: '#000000',
+                    color: '#FFFFFF',
+                    width: 50,
+                    height: 50,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    mx: 'auto',
+                    mb: 2,
+                    fontWeight: 'bold'
+                  }}>
+                    {index + 1}
+                  </Box>
+                  <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>{step.title}</Typography>
+                  <Typography>{step.description}</Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* CTA Section */}
+      <Box sx={{ py: 8 }}>
+        <Container maxWidth="md">
+          <Box sx={{ textAlign: 'center' }}>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
+              Ready to Ace Your Next Interview?
+            </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                backgroundColor: '#000000',
+                color: '#FFFFFF',
+                px: 6,
+                '&:hover': {
+                  backgroundColor: '#FFFFFF',
+                  color: '#000000',
+                  border: '1px solid #000000',
+                },
+              }}
+              onClick={handleClick}
+            >
+              Get Started for Free
+            </Button>
+          </Box>
+        </Container>
+      </Box>
 
       {/* Footer */}
-      <footer
-        style={{
-          backgroundColor: '#F8F8F8',
-          textAlign: 'center',
-          padding: '2rem 1rem',
-          marginTop: 'auto',
-          width: '100%',
-        }}
-      >
-        <Typography variant="body2" color="text.secondary">
-          © {new Date().getFullYear()} Interview AI. All rights reserved.
-        </Typography>
-      </footer>
-    </div>
+      <Box component="footer" sx={{ backgroundColor: '#FFFFFF', py: 4, mt: 'auto' }}>
+        <Container maxWidth="lg">
+          <Typography variant="body2" color="text.secondary" align="center">
+            © {new Date().getFullYear()} Interview AI. All rights reserved.
+          </Typography>
+        </Container>
+      </Box>
+    </Box>
   );
 };
 
