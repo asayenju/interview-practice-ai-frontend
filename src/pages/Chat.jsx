@@ -36,6 +36,7 @@ const ChatPage = () => {
         const blob = new Blob(audioChunks.current, { type: 'audio/webm' });
         try {
           const response = await transcribeaudio(blob);
+          try {
           const result = await analyzeResponse(
             conversation.find(item => item.id === responseId).text,
             response.transcript
@@ -51,6 +52,14 @@ const ChatPage = () => {
             }
             return item;
           }));
+          } catch (error) {
+            console.log(error.response.status)
+            if (error.response && error.response.status === 400) {
+              alert("We couldn't hear your response. Please speak louder or more clearly.");
+            } else {
+              console.error("Other error:", error);
+            }
+          }
         } catch (err) {
           console.error("Transcription error:", err);
         }

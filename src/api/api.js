@@ -17,6 +17,10 @@ export const analyzeResponse = async (question, transcript) => {
         return response.data.analysis;
     } catch (error) {
         console.error("Error analyzing response:", error);
+        if (error.response && error.response.status === 400) {
+          alert("We couldn't hear your response. Please speak louder or more clearly.");
+          throw new Error("Failed to analyze response");
+        }
         throw new Error("Failed to analyze response");
     }
 }
